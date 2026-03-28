@@ -62,7 +62,7 @@ app.get('/api/stats', async (req, res) => {
 // Fallback: serve index.html for any non-API route
 app.get('*', (req, res) => {
   if (!req.path.startsWith('/api')) {
-    res.sendFile(path.join(__dirname, '..', 'frontend', 'INDEX.HTML'));
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
   }
 });
 
