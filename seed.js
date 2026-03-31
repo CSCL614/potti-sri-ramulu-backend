@@ -28,8 +28,8 @@ async function seed() {
     const existingPotti = await PottiInfo.findOne();
     if (!existingPotti) {
       await PottiInfo.create({
-        nte: 'అమరజీవి పొట్టి శ్రీరాములు',
-        nen: 'Amarajivi Potti Sriramulu',
+        nte: 'అమరజీవి శ్రీ పొట్టి శ్రీరాములు స్మారక సేవా సమితి, ఆంధ్రప్రదేశ్',
+        nen: 'Amarajivi Shri Potti Sriramulu Memorial Service Society, Andhra Pradesh',
         dates: '16 March 1901 – 15 December 1952',
         p1te: 'పొట్టి శ్రీరాములు 1901 మార్చి 16న నెల్లూరు జిల్లాలో జన్మించారు. ఆయన మహాత్మా గాంధీ అనుచరుడిగా స్వాతంత్ర్య పోరాటంలో చురుకుగా పాల్గొన్నారు.',
         p1en: "Potti Sriramulu was born on 16 March 1901 in Nellore district. A devoted follower of Mahatma Gandhi, he actively participated in India's freedom struggle.",
