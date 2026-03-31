@@ -6,8 +6,17 @@ const connectDB = require('./config/db');
 
 const app = express();
 
-// Connect to MongoDB
-connectDB();
+// Connect to MongoDB using a global middleware
+// This ensures that the DB resolves before processing routes, which fixes the Vercel cold boot and sleep drops.
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('Failed to establish DB connection in middleware:', err);
+    res.status(500).json({ error: 'Database connection failed.' });
+  }
+});
 
 // Middleware
 app.use(cors({
